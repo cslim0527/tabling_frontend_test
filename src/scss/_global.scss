@@ -1,0 +1,74 @@
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+$point-color: #162149;
+$breakpoint-mobile: 1023px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #ced8e4;
+  font-family: 'NanumSquare', sans-serif;
+}
+
+ul, ol, li {
+  list-style-type: none;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  background: none;
+  font-family: 'NanumSquare', sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+@mixin btn-filled {
+  min-width: 78px;
+  font-size: 14px;
+  color: #fff;
+  height: 35px;
+  padding: 0 24px;
+  border-radius: 6px;
+  background-color: $point-color;
+}
+
+@mixin btn-line {
+  min-width: 78px;
+  font-size: 14px;
+  color: $point-color;
+  font-weight: bold;
+  height: 35px;
+  padding: 0 24px;
+  border-radius: 6px;
+  border: 2px solid $point-color;
+}
+
+@mixin set-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin set-hidden-scroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
